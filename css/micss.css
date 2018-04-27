@@ -138,6 +138,8 @@ header>div{
     width: 100%;
     height: 100%;
     padding: 30px;
+    padding-left: 76.5px;
+    padding-right: 20px;
 }
 
 #prod2{
@@ -175,8 +177,7 @@ header>div{
 }
 
 #prod div{
-    width: 300px;
-    min-height: 500px;
+    height: 660px;
     border: 1px solid #e8e8e8;
     background-color: #fcfcfc;
     box-shadow: 0px 0px 10px grey;
@@ -186,10 +187,12 @@ header>div{
     align-items: center;
     z-index: 100;
     margin: 23px;
-    padding: 20px;
+    margin-right: 78px;
+    padding: 20px 0px;
     float: left;
     background-color: #f8f8f8;
     border-radius: 10px;
+    margin-bottom: 50px;
 }
 
 #prod2 div{
@@ -209,8 +212,8 @@ header>div{
 }
 
 #prod div a{
-    width: 300px;
-    min-height: 500px;
+    width: 100%;
+    height: 530px;
     border: 1px solid #e8e8e8;
     background-color: #fcfcfc;
     box-shadow: 0px 0px 10px grey;
@@ -219,8 +222,7 @@ header>div{
     justify-content: space-around;
     align-items: center;
     z-index: 100;
-    margin: 23px;
-    float: left;
+    margin: 23px 0px;
 }
 
 #prod2 div a h3{
@@ -338,8 +340,7 @@ footer{
 }
 
 #desc{
-    width: 980px;
-    height: 590px;
+    width: 720px;
     border: 1px solid #e8e8e8;
     background-color: #fcfcfc;
     box-shadow: 0px 0px 10px grey;
@@ -354,8 +355,6 @@ footer{
     position: relative;
     left: 100px;
 }
-
-
 
 #desc h2{
     color: #ff2626;
@@ -392,9 +391,20 @@ footer{
 }
 
 button{
-    width: 50px;
+    text-decoration: none;
+    padding: 10px 24px;
+    color: #ffffff;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 4px solid #ff0000;
+    font-size: 30px;
+}
+
+button span{
+    font-size: 30px;
+}
+
+button:hover{
+    background-color: #ff0000;
     color: white;
-    border-radius: 50%;
-    background-color: rgba(128, 128, 128, 0.39);
-    padding: 10px;
 }

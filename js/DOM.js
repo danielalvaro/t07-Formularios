@@ -199,7 +199,7 @@ var ventana;
             var i = 0;
             var div="div";
             do {
-                document.getElementById("prod").innerHTML+="<div><a href='#' onmouseover='productShopPopulate("+i+")' onmouseout='productShopPopulate2("+i+")' onclick='globalProductPopulate(glob,"+i+")' id='div"+i+"'><h3>"+tienda.products[i].name+"</h3><img src='"+tienda.products[i].images[0]+"'><span id='span"+i+"'>"+tienda.products[i].description+"</span><h4>"+tienda.products[i].price+" €</h4></a><button onclick='abrirVentana(glob,"+i+")'>></button></div>";
+                document.getElementById("prod").innerHTML+="<div><a href='#' onmouseover='productShopPopulate("+i+")' onmouseout='productShopPopulate2("+i+")' onclick='globalProductPopulate(glob,"+i+")' id='div"+i+"'><h3>"+tienda.products[i].name+"</h3><img src='"+tienda.products[i].images[0]+"'><span id='span"+i+"'>"+tienda.products[i].description+"</span><h4>"+tienda.products[i].price+" €</h4></a><button onclick='abrirVentana(glob,"+i+")'><span>></span></button></div>";
                 i++;
             } while (i < productos.length);
         }
@@ -235,7 +235,7 @@ var ventana;
                 var i = 0;
                 do {
                     if (tienda.products[i].cat === categoria) {
-                        document.getElementById("prod").innerHTML+="<div onmouseover='productShopPopulate("+i+")' onmouseout='productShopPopulate2("+i+")' onclick='globalProductPopulate(glob,"+i+")' id='div"+i+"'><a href='#'><h3>"+tienda.products[i].name+"</h3><img src='"+tienda.products[i].images[0]+"'><span id='span"+i+"'>"+tienda.products[i].description+"</span><h4>"+tienda.products[i].price+" €</h4><h3 id='stock"+i+"'>(Stock: "+tienda.products[i].stock+")</h3></a></div>";
+                        document.getElementById("prod").innerHTML+="<div><a href='#' onmouseover='productShopPopulate("+i+")' onmouseout='productShopPopulate2("+i+")' onclick='globalProductPopulate(glob,"+i+")' id='div"+i+"'><h3>"+tienda.products[i].name+"</h3><img src='"+tienda.products[i].images[0]+"'><span id='span"+i+"'>"+tienda.products[i].description+"</span><h4>"+tienda.products[i].price+" €</h4></a><button onclick='abrirVentana(glob,"+i+")'><span>></span></button></div>";
                     }
                     i++;
                 } while (i < productos.length);
