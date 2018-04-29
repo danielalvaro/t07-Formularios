@@ -11,9 +11,9 @@ body{
 
 main{
     min-height: 792px;
-    width: 1450px;
+    width: 1404px;
     background-color: white;
-    box-shadow: 0px 0px 8px #5c5c5c;
+    box-shadow: 0px 0px 6px #ff0000;
     overflow: hidden;
     display: table;
 }
@@ -28,30 +28,26 @@ header{
     z-index: 800;
 }
 
-header>div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #nav{
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 2px solid red;
+    z-index: 200;
 }
 
 #nav a{
     padding: 53px 80px; 
     text-decoration: none;
     color: #5c5c5c;
-    border-right: 1px solid #efefef;
-    background: linear-gradient(to right, rgb(245, 245, 245), white, white, white, white, white);
+    background: linear-gradient(to right, rgb(245, 245, 245), white, white, white, white, white, rgb(245, 245, 245));
+    border-bottom: px solid red;
 }
 
 #nav a:hover{
-    background: linear-gradient(to right, #cc1818, #ff2525, #ff2525, #ff2525, #ff2525, #cc1818);
+    background: linear-gradient(to right, #eb0000, red, red, red, red, #eb0000);
     color: white;
 }
 
@@ -68,23 +64,58 @@ header>div{
     height: auto;
 }
 
-#carrito{
+#user{
+    padding: 14px;
     position: absolute;
     right: 0px;
     top: 0px;
-    padding: 36px 68px;
+    height: 140px;
+    width: 200px;
     border-left: 1px solid #efefef;
-    background: linear-gradient(to right, #f5f5f5, white, white, white, white, white);
+    background-color: white;
     color: red;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
 }
 
-#carrito span{
-    font-size: 60px;
+#user input{
+    width: 171px;
+    height: 30px;
+    padding: 4px;
 }
 
-#carrito:hover{
+#user button{
+    background-color: #f2f2f2;
+    width: 100px;
+    height: 30px;
+    box-shadow: 0px 0px 0px;
+    border: 1px solid #7e7e7e;
+    color: #1d1d1d;
+}
+
+#user button:hover{
+    background-color: red;
     color: white;
-    background: linear-gradient(to right, #cc1818, #ff2525, #ff2525, #ff2525, #ff2525, #cc1818);
+    border: 1px solid red;
+}
+
+#icono{
+    position: absolute;
+    width: 50px;
+    height: 140px;
+    top: 0px;
+    right: 200px;
+    background-color: #ff0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#icono span{
+    color: white;
 }
 
 #cat{
@@ -138,8 +169,7 @@ header>div{
     width: 100%;
     height: 100%;
     padding: 30px;
-    padding-left: 76.5px;
-    padding-right: 20px;
+    padding:30px 60px;
 }
 
 #prod2{
@@ -150,7 +180,6 @@ header>div{
     justify-content: center;
     align-items: center;
 }
-
 
 #prod p{
     color: #696969;
@@ -177,7 +206,7 @@ header>div{
 }
 
 #prod div{
-    height: 660px;
+    height: 670px;
     border: 1px solid #e8e8e8;
     background-color: #fcfcfc;
     box-shadow: 0px 0px 10px grey;
@@ -186,13 +215,13 @@ header>div{
     justify-content: space-around;
     align-items: center;
     z-index: 100;
-    margin: 23px;
-    margin-right: 78px;
+    margin: 10px 10px;
     padding: 20px 0px;
     float: left;
     background-color: #f8f8f8;
     border-radius: 10px;
     margin-bottom: 50px;
+    width: 300px;
 }
 
 #prod2 div{
@@ -212,8 +241,8 @@ header>div{
 }
 
 #prod div a{
-    width: 100%;
-    height: 530px;
+    width: 200px;
+    height: 300px;
     border: 1px solid #e8e8e8;
     background-color: #fcfcfc;
     box-shadow: 0px 0px 10px grey;
@@ -222,7 +251,6 @@ header>div{
     justify-content: space-around;
     align-items: center;
     z-index: 100;
-    margin: 23px 0px;
 }
 
 #prod2 div a h3{
@@ -392,16 +420,25 @@ footer{
 
 button{
     text-decoration: none;
-    padding: 10px 24px;
+    width: 80px;
+    height: 60px;
     color: #ffffff;
     background-color: #ffffff;
     border-radius: 6px;
     border: 4px solid #ff0000;
     font-size: 30px;
+    box-shadow: 0px 0px 14px red;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button span{
-    font-size: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #c6c6c6;
 }
 
 button:hover{

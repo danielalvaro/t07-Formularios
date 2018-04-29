@@ -146,9 +146,11 @@ var ventana;
             almacen.addProductInShop(p10, t4, 4);
             almacen.addProductInShop(p11, t4, 4);
             almacen.addProductInShop(p12, t4, 4);
-
+            
+            initPopulate();
             shopsMenusPopulate();
             menuCategoryShopPopulate();
+            acceso();
         }
 
 
@@ -290,5 +292,4 @@ var ventana;
 
 
 
-        window.onload = init();
-        window.onload = initPopulate();
+        window.onload = init;
