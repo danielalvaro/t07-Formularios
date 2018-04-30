@@ -1,4 +1,4 @@
-
+loggeado = false;
 
 
 
@@ -7,19 +7,56 @@
 
 
 function acceso() {
-    var d = document.getElementById("user");
-    while (d.hasChildNodes()) d.removeChild(d.firstChild);
+    var f = document.getElementById("form1");
+    while (f.hasChildNodes()) f.removeChild(f.firstChild);
     var user = document.createElement("input");
-    user.setAttribute("placeholder","Usuario");
+    user.setAttribute("type", "text");
+    user.setAttribute("placeholder", "Usuario");
+    user.setAttribute("id", "campouser")
     var pass = document.createElement("input");
-    pass.setAttribute("placeholder","Contraseña");
+    pass.setAttribute("type", "password");
+    pass.setAttribute("placeholder", "Contraseña");
+    pass.setAttribute("id", "campopass")
     var boton = document.createElement("button");
-    var t = document.createTextNode("Acceder");
-    boton.appendChild(t);
-    
-    d.appendChild(user);
-    d.appendChild(pass);
-    d.appendChild(boton);
+    boton.textContent = "Acceder";
+
+    f.appendChild(user);
+    f.appendChild(pass);
+    f.appendChild(boton);
+
+
+    boton.addEventListener("click", validar);
+}
+
+
+
+
+
+
+
+
+
+function validar() {
+    var user = document.getElementById("campouser").value;
+    var pass = document.getElementById("campopass").value;
+    if (user == "prueba" && pass == "prueba") {
+        loggeado = true;
+        var f = document.getElementById("form1");
+        while (f.hasChildNodes()) f.removeChild(f.firstChild);
+        var saludo = document.createElement("h2");
+        saludo.textContent = "Usuario loggeado:";
+        var saludo2 = document.createElement("h2");
+        saludo2.textContent = user;
+        var cerrarsesion = document.createElement("button");
+        cerrarsesion.addEventListener("click", acceso);
+        cerrarsesion.textContent = "Cerrar sesión";
+
+        f.appendChild(saludo);
+        f.appendChild(saludo2);
+        f.appendChild(cerrarsesion);
+    } else {
+
+    }
 }
 
 
@@ -46,7 +83,7 @@ function getCookie(nombre) {
     var array = dpcument.cookie.split(";");
     for (var i = 0; i < array.length; i++) {
         var c = array[i];
-        while (c.charAt(0)=" ") {
+        while (c.charAt(0) = " ") {
             c.c.substring(1);
         }
         if (c.indexOf(nombre) == 0) {
