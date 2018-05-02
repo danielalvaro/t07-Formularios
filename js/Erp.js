@@ -84,8 +84,12 @@ function StoreHouse(){
         var disponible=false;
         var i=0;
         for(i;i<categorias.length;i++){
-            if(valorCategory===categorias[i]){
+            if(valorCategory===categorias[i].title){
                 disponible=true;
+                for(var j=0;j<categorias[i].products.length;j++){
+                    alert(categorias[i].products.length);
+                    categorias[0].products.push(categorias[i].products[j]);
+                }
                 categorias.splice(i,1);
             }
         }
@@ -232,7 +236,7 @@ function StoreHouse(){
         var disponible=false;
         var i=0;
         for(i;i<tiendas.length;i++){
-            if(valorShop===tiendas[i]){
+            if(valorShop===tiendas[i].name){
                 disponible=true;
                 tiendas.splice(i,1);
             }

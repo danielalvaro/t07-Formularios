@@ -1,6 +1,6 @@
 var ventana;       
     function init() {
-            var almacen = new StoreHouse();
+            almacen = new StoreHouse();
             almacen.nameSH = "almacen";
             var co1 = new Coords(90, 68);
 
@@ -28,62 +28,62 @@ var ventana;
 
             //Productos:
             var p1 = new Product(1, "Camiseta negra", 25);
-            p1.images[0] = "../img/p1.png";
+            p1.images[0] = "img/p1.png";
             p1.cat = c1;
             p1.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p1, c1);
             var p2 = new Product(2, "Camiseta blanca", 20);
-            p2.images[0] = "../img/p2.png";
+            p2.images[0] = "img/p2.png";
             p2.cat = c1;
             p2.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p2, c1);
             var p3 = new Product(3, "Camiseta roja", 18);
-            p3.images[0] = "../img/p3.png";
+            p3.images[0] = "img/p3.png";
             p3.cat = c1;
             p3.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p3, c1);
             var p4 = new Product(4, "Camiseta azul", 30);
-            p4.images[0] = "../img/p4.png";
+            p4.images[0] = "img/p4.png";
             p4.cat = c1;
             p4.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p4, c1);
             var p5 = new Product(5, "Pantalón rojo", 40);
-            p5.images[0] = "../img/p5.png";
+            p5.images[0] = "img/p5.png";
             p5.cat = c2;
             p5.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p5, c1);
             var p6 = new Product(6, "Pantalón azul", 30);
-            p6.images[0] = "../img/p6.png";
+            p6.images[0] = "img/p6.png";
             p6.cat = c2;
             p6.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p6, c1);
             var p7 = new Product(7, "Pantalón negro", 40);
-            p7.images[0] = "../img/p7.png";
+            p7.images[0] = "img/p7.png";
             p7.cat = c2;
             p7.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p7, c1);
             var p8 = new Product(8, "Zapatillas blancas", 30);
-            p8.images[0] = "../img/p8.png";
+            p8.images[0] = "img/p8.png";
             p8.cat = c3;
             p8.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p8, c1);
             var p9 = new Product(9, "Zapatillas negras", 40);
-            p9.images[0] = "../img/p9.png";
+            p9.images[0] = "img/p9.png";
             p9.cat = c3;
             p9.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p9, c1);
             var p10 = new Product(10, "Sudadera negra", 40);
-            p10.images[0] = "../img/p10.png";
+            p10.images[0] = "img/p10.png";
             p10.cat = c4;
             p10.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p10, c1);
             var p11 = new Product(11, "Sudadera gris", 30);
-            p11.images[0] = "../img/p11.png";
+            p11.images[0] = "img/p11.png";
             p11.cat = c4;
             p11.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p11, c1);
             var p12 = new Product(12, "Sudadera verde", 40);
-            p12.images[0] = "../img/p12.png";
+            p12.images[0] = "img/p12.png";
             p12.cat = c4;
             p12.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p12, c1);
@@ -177,6 +177,9 @@ var ventana;
 
 
         function shopsMenusPopulate() {
+            var d = document.getElementById("nav");
+            while (d.hasChildNodes())
+                d.removeChild(d.firstChild);
             for (var i = 0; i < tiendas.length; i++) {
                 document.getElementById("nav").innerHTML += '<a href="#" onclick="shopPopulate(tiendas[' + i + '])">' + tiendas[i].name + '</a>';
             }
@@ -212,6 +215,9 @@ var ventana;
 
 
         function menuCategoryShopPopulate() {
+            var d = document.getElementById("cat");
+            while (d.hasChildNodes())
+                d.removeChild(d.firstChild);
             for (var i = 0; i < categorias.length; i++) {
                 document.getElementById("cat").innerHTML += '<a href="#" onclick="productsCategoryShopPopulate(glob,categorias[' + i + '])">' + categorias[i].title + "</a>";
             }
