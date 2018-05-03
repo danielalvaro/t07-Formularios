@@ -1,4 +1,6 @@
 //Store house
+
+w=0;
 function StoreHouse(){
     
     if(!(this instanceof StoreHouse)) throw new InvalidAccessConstructorException();
@@ -68,12 +70,25 @@ function StoreHouse(){
         
         var disponible=true;
         for(var i=0;i<categorias.length;i++){
-            if(valorCategory===categorias[i]){
+            if(valorCategory===categorias[i].title){
                 disponible=false;
             }
         }
         if(disponible){
-            categorias.push(valorCategory);
+            if(valorCategory!=""){
+                var todo=categorias[categorias.length-1];
+                if(w>4){
+                    categorias.pop();
+                    categorias.push(valorCategory);
+                    categorias.push(todo);
+                }else{
+                    categorias.push(valorCategory);
+                }
+                w++;
+                
+            }
+            
+            
         }else{
             throw new CategoriaExistenteException(valorCategory);
         }

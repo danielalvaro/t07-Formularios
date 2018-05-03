@@ -196,6 +196,7 @@ function addcat2() {
     almacen.addCategory(x1);
     menuCategoryShopPopulate();
     validado();
+    addcat();
 }
 
 
@@ -331,6 +332,7 @@ function addshop2() {
     var x1 = new Shop(x);
     almacen.addShop(x1);
     shopsMenusPopulate();
+    addshop();
     validado();
 }
 
@@ -457,6 +459,16 @@ function addprod() {
         option.textContent = tiendas[i].name;
         input.appendChild(option);
     }
+    var modif8 = document.createElement("p");
+    modif8.textContent = "Seleccionar categoría:";
+    var input8 = document.createElement("select");
+    input8.setAttribute("class", "campos");
+    input8.setAttribute("id", "selectcat8");
+    for (var i = 0; i < categorias.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = categorias[i].title;
+        input8.appendChild(option);
+    }
     var nuevo2 = document.createElement("p");
     nuevo2.textContent = "Nombre:";
     var input1 = document.createElement("input");
@@ -491,6 +503,8 @@ function addprod() {
     form.appendChild(nuevo);
     form.appendChild(modif);
     form.appendChild(input);
+    form.appendChild(modif8);
+    form.appendChild(input8);
     form.appendChild(nuevo2);
     form.appendChild(input1);
     form.appendChild(nuevo3);
@@ -507,7 +521,8 @@ function addprod2() {
     var serial = productos[productos.length - 1].serialNumber + 1;
     var combo = document.getElementById("selectcat");
     var selected = combo.options[combo.selectedIndex].text;
-
+    var combo8 = document.getElementById("selectcat8");
+    var selected8 = combo8.options[combo8.selectedIndex].text;
 
     for (var i = 0; i < tiendas.length; i++) {
         if (tiendas[i].name == selected) {
@@ -515,14 +530,20 @@ function addprod2() {
         }
     }
 
+    for (var i = 0; i < categorias.length; i++) {
+        if (categorias[i].title == selected8) {
+            var cate = categorias[i];
+        }
+    }
+    
     var x = new Product(serial, document.getElementById("inputnombre").value, document.getElementById("inputprecio").value);
 
     x.images[0] = document.getElementById("inputimagen").value;
-
-
+    x.cat=cate;
+    
     almacen.addProduct(x, categorias[1]);
     almacen.addProductInShop(x, tienda, document.getElementById("inputstock").value);
-    initPopulate();
+    addprod();
     validado();
 }
 
@@ -590,7 +611,7 @@ function removeprod2() {
         }
     }
 
-    initPopulate();
+    removeprod();
     validado();
 }
 
@@ -698,7 +719,7 @@ function modifyprod2() {
     }
 
     
-    initPopulate();
+    modifyprod();
     validado();
 }
 
@@ -755,7 +776,7 @@ function modifystock2() {
             productos[i].stockglobal = document.getElementById("inputstock").value;
         }
     }
-    initPopulate();
+    modifystock();
     validado();
 }
 
