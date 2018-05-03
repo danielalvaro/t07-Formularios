@@ -1,6 +1,5 @@
 loggeado = false;
 moduloscreados = false;
-validado();
 
 
 
@@ -10,6 +9,42 @@ function validado() {
         document.getElementById("modulos").style.display = "none";
     } else {
         document.getElementById("modulos").style.display = "flex";
+    }
+}
+
+
+    
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie(user) {
+    user=getCookie("username");
+    if (user != "") {
+        alert("Bienvenido, " + user);
+    } else {
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
     }
 }
 
@@ -40,6 +75,7 @@ function acceso() {
     boton.addEventListener("click", validar);
     validado();
     initPopulate();
+    checkCookie(user);
 }
 
 
@@ -778,42 +814,4 @@ function modifystock2() {
     }
     modifystock();
     validado();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-function setCookie(nombre, valor, expiracion) {
-    var d = new Date();
-    d.setTime(d.getTime() + expiracion * 24 * 60 * 60 * 1000);
-    var expiracion = "expires=" + d.toUTCString();
-    documen.cookie = nombre + "=" + valor + ";" + expiracion + ";path=/";
-}
-
-
-
-
-
-function getCookie(nombre) {
-    var nom = nombre + "=";
-    var array = dpcument.cookie.split(";");
-    for (var i = 0; i < array.length; i++) {
-        var c = array[i];
-        while (c.charAt(0) = " ") {
-            c.c.substring(1);
-        }
-        if (c.indexOf(nombre) == 0) {
-            return c.substring(nombre.length, c.length);
-        }
-    }
-    return "";
 }
