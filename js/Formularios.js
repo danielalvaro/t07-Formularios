@@ -1,15 +1,15 @@
 loggeado = false;
-moduloscreados=false;
+moduloscreados = false;
 validado();
 
 
 
 
-function validado(){
-    if(loggeado==false){
-        document.getElementById("modulos").style.display="none";
-    }else{
-        document.getElementById("modulos").style.display="flex";
+function validado() {
+    if (loggeado == false) {
+        document.getElementById("modulos").style.display = "none";
+    } else {
+        document.getElementById("modulos").style.display = "flex";
     }
 }
 
@@ -18,7 +18,7 @@ function validado(){
 
 
 function acceso() {
-    loggeado=false;
+    loggeado = false;
     var f = document.getElementById("form1");
     while (f.hasChildNodes()) f.removeChild(f.firstChild);
     var user = document.createElement("input");
@@ -68,7 +68,7 @@ function validar() {
         f.appendChild(saludo);
         f.appendChild(saludo2);
         f.appendChild(cerrarsesion);
-        
+
         modulos();
         validado();
     } else {
@@ -84,81 +84,79 @@ function validar() {
 
 
 
+function modulos() {
+    if (moduloscreados == false) {
+        var modulocat = document.getElementById("modulocat");
+        var modulonav = document.getElementById("modulonav");
+        var moduloprod = document.getElementById("moduloprod");
+        var modulostock = document.getElementById("modulostock");
 
+        var addcat = document.createElement("div");
+        addcat.setAttribute("class", "editar");
+        addcat.textContent = "Añadir categoría";
+        addcat.setAttribute("onclick", "addcat()");
+        addcat.setAttribute("style", "cursor:pointer");
+        var removecat = document.createElement("div");
+        removecat.setAttribute("class", "editar");
+        removecat.textContent = "Borrar categoría";
+        removecat.setAttribute("onclick", "removecat()");
+        removecat.setAttribute("style", "cursor:pointer");
+        var modifycat = document.createElement("div");
+        modifycat.setAttribute("class", "editar");
+        modifycat.textContent = "Modificar categoría";
+        modifycat.setAttribute("onclick", "modifycat()");
+        modifycat.setAttribute("style", "cursor:pointer");
+        var addshop = document.createElement("div");
+        addshop.setAttribute("class", "editar");
+        addshop.textContent = "Añadir tienda";
+        addshop.setAttribute("onclick", "addshop()");
+        addshop.setAttribute("style", "cursor:pointer");
+        var removeshop = document.createElement("div");
+        removeshop.setAttribute("class", "editar");
+        removeshop.textContent = "Borrar tienda";
+        removeshop.setAttribute("onclick", "removeshop()");
+        removeshop.setAttribute("style", "cursor:pointer");
+        var modifyshop = document.createElement("div");
+        modifyshop.setAttribute("class", "editar");
+        modifyshop.textContent = "Modificar tienda";
+        modifyshop.setAttribute("onclick", "modifyshop()");
+        modifyshop.setAttribute("style", "cursor:pointer");
+        var addprod = document.createElement("div");
+        addprod.setAttribute("class", "editar");
+        addprod.textContent = "Añadir producto";
+        addprod.setAttribute("onclick", "addprod()");
+        addprod.setAttribute("style", "cursor:pointer");
+        var removeprod = document.createElement("div");
+        removeprod.setAttribute("class", "editar");
+        removeprod.textContent = "Borrar producto";
+        removeprod.setAttribute("onclick", "removeprod()");
+        removeprod.setAttribute("style", "cursor:pointer");
+        var modifyprod = document.createElement("div");
+        modifyprod.setAttribute("class", "editar");
+        modifyprod.textContent = "Modificar producto";
+        modifyprod.setAttribute("onclick", "modifyprod()");
+        modifyprod.setAttribute("style", "cursor:pointer");
+        var modifystock = document.createElement("div");
+        modifystock.setAttribute("class", "editar");
+        modifystock.textContent = "Modificar stock";
+        modifystock.setAttribute("onclick", "modifystock()");
+        modifystock.setAttribute("style", "cursor:pointer");
 
-function modulos(){
-    if(moduloscreados==false){
-    var modulocat= document.getElementById("modulocat");
-    var modulonav= document.getElementById("modulonav");
-    var moduloprod= document.getElementById("moduloprod");
-    var modulostock= document.getElementById("modulostock");
-    
-    var addcat= document.createElement("div");
-    addcat.setAttribute("class","editar");
-    addcat.textContent="Añadir categoría";
-    addcat.setAttribute("onclick","addcat()");
-    addcat.setAttribute("style","cursor:pointer");
-    var removecat= document.createElement("div");
-    removecat.setAttribute("class","editar");
-    removecat.textContent="Borrar categoría";
-    removecat.setAttribute("onclick","removecat()");
-    removecat.setAttribute("style","cursor:pointer");
-    var modifycat= document.createElement("div");
-    modifycat.setAttribute("class","editar");
-    modifycat.textContent="Modificar categoría";
-    modifycat.setAttribute("onclick","modifycat()");
-    modifycat.setAttribute("style","cursor:pointer");
-    var addshop= document.createElement("div");
-    addshop.setAttribute("class","editar");
-    addshop.textContent="Añadir tienda";
-    addshop.setAttribute("onclick","addshop()");
-    addshop.setAttribute("style","cursor:pointer");
-    var removeshop= document.createElement("div");
-    removeshop.setAttribute("class","editar");
-    removeshop.textContent="Borrar tienda";
-    removeshop.setAttribute("onclick","removeshop()");
-    removeshop.setAttribute("style","cursor:pointer");
-    var modifyshop= document.createElement("div");
-    modifyshop.setAttribute("class","editar");
-    modifyshop.textContent="Modificar tienda";
-    modifyshop.setAttribute("onclick","modifyshop()");
-    modifyshop.setAttribute("style","cursor:pointer");
-    var addprod =document.createElement("div");
-    addprod.setAttribute("class","editar");
-    addprod.textContent="Añadir producto";
-    addprod.setAttribute("onclick","addprod()");
-    addprod.setAttribute("style","cursor:pointer");
-    var removeprod= document.createElement("div");
-    removeprod.setAttribute("class","editar");
-    removeprod.textContent="Borrar producto";
-    removeprod.setAttribute("onclick","removeprod()");
-    removeprod.setAttribute("style","cursor:pointer");
-    var modifyprod =document.createElement("div");
-    modifyprod.setAttribute("class","editar");
-    modifyprod.textContent="Modificar producto";
-    modifyprod.setAttribute("onclick","modifyprod()");
-    modifyprod.setAttribute("style","cursor:pointer");
-    var modifystock =document.createElement("div");
-    modifystock.setAttribute("class","editar");
-    modifystock.textContent="Modificar stock";
-    modifystock.setAttribute("onclick","modifystock()");
-    modifystock.setAttribute("style","cursor:pointer");
-    
-    modulocat.appendChild(addcat);
-    modulocat.appendChild(removecat);
-    modulocat.appendChild(modifycat);
-    
-    modulonav.appendChild(addshop);
-    modulonav.appendChild(removeshop);
-    modulonav.appendChild(modifyshop);
-    
-    moduloprod.appendChild(addprod);
-    moduloprod.appendChild(removeprod);
-    moduloprod.appendChild(modifyprod);
-    
-    modulostock.appendChild(modifystock);
-        
-    moduloscreados=true;
+        modulocat.appendChild(addcat);
+        modulocat.appendChild(removecat);
+        modulocat.appendChild(modifycat);
+
+        modulonav.appendChild(addshop);
+        modulonav.appendChild(removeshop);
+        modulonav.appendChild(modifyshop);
+
+        moduloprod.appendChild(addprod);
+        moduloprod.appendChild(removeprod);
+        moduloprod.appendChild(modifyprod);
+
+        modulostock.appendChild(modifystock);
+
+        moduloscreados = true;
     }
     validado();
 }
@@ -170,32 +168,33 @@ function modulos(){
 
 
 
-function addcat(){
-    var d=document.getElementById("prod");
+function addcat() {
+    var d = document.getElementById("prod");
     while (d.hasChildNodes()) d.removeChild(d.firstChild);
-    var form=document.createElement("form");
-    form.setAttribute("class","formprod");
-    var nuevo=document.createElement("p");
-    nuevo.textContent="Nueva categoría:";
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Nueva categoría:";
     var input1 = document.createElement("input");
     input1.setAttribute("type", "text");
     input1.setAttribute("class", "campos");
-    input1.setAttribute("id","inputcat");
+    input1.setAttribute("id", "inputcat");
     var boton = document.createElement("button");
-    boton.textContent="Aceptar";
-    boton.setAttribute("onclick","addcat2()");
-    
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "addcat2()");
+
     d.appendChild(form);
     form.appendChild(nuevo);
     form.appendChild(input1);
-    form.appendChild(boton); 
+    form.appendChild(boton);
     validado();
 }
-function addcat2(){
-    var x=document.getElementById("inputcat").value;
+
+function addcat2() {
+    var x = document.getElementById("inputcat").value;
     var x1 = new Category(x);
-        almacen.addCategory(x1);
-        menuCategoryShopPopulate();
+    almacen.addCategory(x1);
+    menuCategoryShopPopulate();
     validado();
 }
 
@@ -207,40 +206,38 @@ function addcat2(){
 
 
 
-
-
-
-function removecat(){
-    var d=document.getElementById("prod");
+function removecat() {
+    var d = document.getElementById("prod");
     while (d.hasChildNodes()) d.removeChild(d.firstChild);
-    var form=document.createElement("form");
-    form.setAttribute("class","formprod");
-    var nuevo=document.createElement("p");
-    nuevo.textContent="Seleccionar categoría:";
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Seleccionar categoría:";
     var input1 = document.createElement("select");
     input1.setAttribute("class", "campos");
-    input1.setAttribute("id","selectcat");
-    for(var i=0;i<categorias.length;i++){
-        var option =document.createElement("option");
-        option.textContent=categorias[i].title;
+    input1.setAttribute("id", "selectcat");
+    for (var i = 0; i < categorias.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = categorias[i].title;
         input1.appendChild(option);
     }
     var boton = document.createElement("button");
-    boton.textContent="Aceptar";
-    boton.setAttribute("onclick","removecat2()");
-    
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "removecat2()");
+
     d.appendChild(form);
     form.appendChild(nuevo);
     form.appendChild(input1);
-    form.appendChild(boton); 
+    form.appendChild(boton);
     validado();
 }
-function removecat2(){
+
+function removecat2() {
     var combo = document.getElementById("selectcat");
     var selected = combo.options[combo.selectedIndex].text;
-        almacen.removeCategory(selected);
-        menuCategoryShopPopulate();
-        removecat();
+    almacen.removeCategory(selected);
+    menuCategoryShopPopulate();
+    removecat();
     validado();
 }
 
@@ -252,50 +249,49 @@ function removecat2(){
 
 
 
-
-
-function modifycat(){
-    var d=document.getElementById("prod");
+function modifycat() {
+    var d = document.getElementById("prod");
     while (d.hasChildNodes()) d.removeChild(d.firstChild);
-    var form=document.createElement("form");
-    form.setAttribute("class","formprod");
-    var modif=document.createElement("p");
-    modif.textContent="Seleccionar categoría:";
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var modif = document.createElement("p");
+    modif.textContent = "Seleccionar categoría:";
     var input1 = document.createElement("select");
     input1.setAttribute("class", "campos");
-    input1.setAttribute("id","selectcat");
-    for(var i=0;i<categorias.length;i++){
-        var option =document.createElement("option");
-        option.textContent=categorias[i].title;
+    input1.setAttribute("id", "selectcat");
+    for (var i = 0; i < categorias.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = categorias[i].title;
         input1.appendChild(option);
     }
-    var nuevo=document.createElement("p");
-    nuevo.textContent="Nuevo nombre:";
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Nuevo nombre:";
     var input2 = document.createElement("input");
     input2.setAttribute("type", "text");
     input2.setAttribute("class", "campos");
-    input2.setAttribute("id","inputcatnombre");
+    input2.setAttribute("id", "inputcatnombre");
     var boton = document.createElement("button");
-    boton.textContent="Aceptar";
-    boton.setAttribute("onclick","modifycat2()");
-    
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "modifycat2()");
+
     d.appendChild(form);
     form.appendChild(modif);
     form.appendChild(input1);
     form.appendChild(nuevo);
     form.appendChild(input2);
-    form.appendChild(boton); 
+    form.appendChild(boton);
     validado();
 }
-function modifycat2(){
+
+function modifycat2() {
     var combo = document.getElementById("selectcat");
     var selected = combo.options[combo.selectedIndex].text;
-        for(var i=0;i<categorias.length;i++){
-            if(categorias[i].title==selected){
-                categorias[i].title=document.getElementById("inputcatnombre").value;
-            }
+    for (var i = 0; i < categorias.length; i++) {
+        if (categorias[i].title == selected) {
+            categorias[i].title = document.getElementById("inputcatnombre").value;
         }
-        menuCategoryShopPopulate();
+    }
+    menuCategoryShopPopulate();
     modifycat();
     validado();
 }
@@ -308,37 +304,33 @@ function modifycat2(){
 
 
 
-
-
-
-
-
-function addshop(){
-    var d=document.getElementById("prod");
+function addshop() {
+    var d = document.getElementById("prod");
     while (d.hasChildNodes()) d.removeChild(d.firstChild);
-    var form=document.createElement("form");
-    form.setAttribute("class","formprod");
-    var nuevo=document.createElement("p");
-    nuevo.textContent="Nueva tienda:";
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Nueva tienda:";
     var input1 = document.createElement("input");
     input1.setAttribute("type", "text");
     input1.setAttribute("class", "campos");
-    input1.setAttribute("id","inputcat");
+    input1.setAttribute("id", "inputcat");
     var boton = document.createElement("button");
-    boton.textContent="Aceptar";
-    boton.setAttribute("onclick","addshop2()");
-    
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "addshop2()");
+
     d.appendChild(form);
     form.appendChild(nuevo);
     form.appendChild(input1);
-    form.appendChild(boton); 
+    form.appendChild(boton);
     validado();
 }
-function addshop2(){
-    var x=document.getElementById("inputcat").value;
+
+function addshop2() {
+    var x = document.getElementById("inputcat").value;
     var x1 = new Shop(x);
-        almacen.addShop(x1);
-        shopsMenusPopulate();
+    almacen.addShop(x1);
+    shopsMenusPopulate();
     validado();
 }
 
@@ -350,41 +342,38 @@ function addshop2(){
 
 
 
-
-
-
-
-function removeshop(){
-    var d=document.getElementById("prod");
+function removeshop() {
+    var d = document.getElementById("prod");
     while (d.hasChildNodes()) d.removeChild(d.firstChild);
-    var form=document.createElement("form");
-    form.setAttribute("class","formprod");
-    var nuevo=document.createElement("p");
-    nuevo.textContent="Seleccionar tienda:";
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Seleccionar tienda:";
     var input1 = document.createElement("select");
     input1.setAttribute("class", "campos");
-    input1.setAttribute("id","selectcat");
-    for(var i=0;i<tiendas.length;i++){
-        var option =document.createElement("option");
-        option.textContent=tiendas[i].name;
+    input1.setAttribute("id", "selectcat");
+    for (var i = 0; i < tiendas.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = tiendas[i].name;
         input1.appendChild(option);
     }
     var boton = document.createElement("button");
-    boton.textContent="Aceptar";
-    boton.setAttribute("onclick","removeshop2()");
-    
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "removeshop2()");
+
     d.appendChild(form);
     form.appendChild(nuevo);
     form.appendChild(input1);
-    form.appendChild(boton); 
+    form.appendChild(boton);
     validado();
 }
-function removeshop2(){
+
+function removeshop2() {
     var combo = document.getElementById("selectcat");
     var selected = combo.options[combo.selectedIndex].text;
-        almacen.removeShop(selected);
-        shopsMenusPopulate();
-        removeshop();
+    almacen.removeShop(selected);
+    shopsMenusPopulate();
+    removeshop();
     validado();
 }
 
@@ -396,53 +385,49 @@ function removeshop2(){
 
 
 
-
-
-
-
-
-function modifyshop(){
-    var d=document.getElementById("prod");
+function modifyshop() {
+    var d = document.getElementById("prod");
     while (d.hasChildNodes()) d.removeChild(d.firstChild);
-    var form=document.createElement("form");
-    form.setAttribute("class","formprod");
-    var modif=document.createElement("p");
-    modif.textContent="Seleccionar tienda:";
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var modif = document.createElement("p");
+    modif.textContent = "Seleccionar tienda:";
     var input1 = document.createElement("select");
     input1.setAttribute("class", "campos");
-    input1.setAttribute("id","selectcat");
-    for(var i=0;i<tiendas.length;i++){
-        var option =document.createElement("option");
-        option.textContent=tiendas[i].name;
+    input1.setAttribute("id", "selectcat");
+    for (var i = 0; i < tiendas.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = tiendas[i].name;
         input1.appendChild(option);
     }
-    var nuevo=document.createElement("p");
-    nuevo.textContent="Nuevo nombre:";
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Nuevo nombre:";
     var input2 = document.createElement("input");
     input2.setAttribute("type", "text");
     input2.setAttribute("class", "campos");
-    input2.setAttribute("id","inputcatnombre");
+    input2.setAttribute("id", "inputcatnombre");
     var boton = document.createElement("button");
-    boton.textContent="Aceptar";
-    boton.setAttribute("onclick","modifyshop2()");
-    
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "modifyshop2()");
+
     d.appendChild(form);
     form.appendChild(modif);
     form.appendChild(input1);
     form.appendChild(nuevo);
     form.appendChild(input2);
-    form.appendChild(boton); 
+    form.appendChild(boton);
     validado();
 }
-function modifyshop2(){
+
+function modifyshop2() {
     var combo = document.getElementById("selectcat");
     var selected = combo.options[combo.selectedIndex].text;
-        for(var i=0;i<tiendas.length;i++){
-            if(tiendas[i].name==selected){
-                tiendas[i].name=document.getElementById("inputcatnombre").value;
-            }
+    for (var i = 0; i < tiendas.length; i++) {
+        if (tiendas[i].name == selected) {
+            tiendas[i].name = document.getElementById("inputcatnombre").value;
         }
-        shopsMenusPopulate();
+    }
+    shopsMenusPopulate();
     modifyshop();
     validado();
 }
@@ -455,56 +440,53 @@ function modifyshop2(){
 
 
 
-
-
-
-function addprod(){
-    var d=document.getElementById("prod");
+function addprod() {
+    var d = document.getElementById("prod");
     while (d.hasChildNodes()) d.removeChild(d.firstChild);
-    var form=document.createElement("form");
-    form.setAttribute("class","formprod");
-    var nuevo=document.createElement("p");
-    nuevo.textContent="Nuevo producto:";
-    var modif=document.createElement("p");
-    modif.textContent="Seleccionar tienda:";
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Nuevo producto:";
+    var modif = document.createElement("p");
+    modif.textContent = "Seleccionar tienda:";
     var input = document.createElement("select");
     input.setAttribute("class", "campos");
-    input.setAttribute("id","selectcat");
-    for(var i=0;i<tiendas.length;i++){
-        var option =document.createElement("option");
-        option.textContent=tiendas[i].name;
+    input.setAttribute("id", "selectcat");
+    for (var i = 0; i < tiendas.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = tiendas[i].name;
         input.appendChild(option);
     }
-    var nuevo2=document.createElement("p");
-    nuevo2.textContent="Nombre:";
+    var nuevo2 = document.createElement("p");
+    nuevo2.textContent = "Nombre:";
     var input1 = document.createElement("input");
     input1.setAttribute("type", "text");
     input1.setAttribute("class", "campos");
-    input1.setAttribute("id","inputnombre");
-    var nuevo3=document.createElement("p");
-    nuevo3.textContent="Imagen:";
+    input1.setAttribute("id", "inputnombre");
+    var nuevo3 = document.createElement("p");
+    nuevo3.textContent = "Imagen:";
     var input2 = document.createElement("input");
     input2.setAttribute("type", "text");
     input2.setAttribute("class", "campos");
-    input2.setAttribute("id","inputimagen");
-    var nuevo4=document.createElement("p");
-    nuevo4.textContent="Precio:";
+    input2.setAttribute("id", "inputimagen");
+    var nuevo4 = document.createElement("p");
+    nuevo4.textContent = "Precio:";
     var input3 = document.createElement("input");
     input3.setAttribute("type", "text");
     input3.setAttribute("class", "campos");
-    input3.setAttribute("id","inputprecio");
-    var nuevo5=document.createElement("p");
-    nuevo5.textContent="Stock:";
+    input3.setAttribute("id", "inputprecio");
+    var nuevo5 = document.createElement("p");
+    nuevo5.textContent = "Stock:";
     var input4 = document.createElement("input");
     input4.setAttribute("type", "text");
     input4.setAttribute("class", "campos");
-    input4.setAttribute("id","inputstock");
-    
-    
+    input4.setAttribute("id", "inputstock");
+
+
     var boton = document.createElement("button");
-    boton.textContent="Aceptar";
-    boton.setAttribute("onclick","addprod2()");
-    
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "addprod2()");
+
     d.appendChild(form);
     form.appendChild(nuevo);
     form.appendChild(modif);
@@ -517,21 +499,265 @@ function addprod(){
     form.appendChild(input3);
     form.appendChild(nuevo5);
     form.appendChild(input4);
-    form.appendChild(boton); 
+    form.appendChild(boton);
     validado();
 }
-function addprod2(){
-    var serial=productos[productos.length-1].serialNumber-1;
+
+function addprod2() {
+    var serial = productos[productos.length - 1].serialNumber + 1;
     var combo = document.getElementById("selectcat");
     var selected = combo.options[combo.selectedIndex].text;
-    var x=new Product(serial,document.getElementById("inputnombre").value,document.getElementById("inputprecio").value);
-    x.images[0]=document.getElementById("inputimagen");
-    almacen.addProductInShop(x, selected, document.getElementById("inputstock"));
-        shopPopulate(selected);
-        validado();
+
+
+    for (var i = 0; i < tiendas.length; i++) {
+        if (tiendas[i].name == selected) {
+            var tienda = tiendas[i];
+        }
+    }
+
+    var x = new Product(serial, document.getElementById("inputnombre").value, document.getElementById("inputprecio").value);
+
+    x.images[0] = document.getElementById("inputimagen").value;
+
+
+    almacen.addProduct(x, categorias[1]);
+    almacen.addProductInShop(x, tienda, document.getElementById("inputstock").value);
+    initPopulate();
+    validado();
 }
 
 
+
+
+
+
+
+
+
+function removeprod() {
+    var d = document.getElementById("prod");
+    while (d.hasChildNodes()) d.removeChild(d.firstChild);
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Seleccionar tienda:";
+    var input = document.createElement("select");
+    input.setAttribute("class", "campos");
+    input.setAttribute("id", "selecttienda");
+    for (var i = 0; i < tiendas.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = tiendas[i].name;
+        input.appendChild(option);
+    }
+    var nuevo1 = document.createElement("p");
+    nuevo1.textContent = "Seleccionar producto:";
+    var input1 = document.createElement("select");
+    input1.setAttribute("class", "campos");
+    input1.setAttribute("id", "selectcat");
+    for (var i = 0; i < productos.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = productos[i].name;
+        input1.appendChild(option);
+    }
+    var boton = document.createElement("button");
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "removeprod2()");
+
+    d.appendChild(form);
+    form.appendChild(nuevo);
+    form.appendChild(input);
+    form.appendChild(nuevo1);
+    form.appendChild(input1);
+    form.appendChild(boton);
+    validado();
+}
+
+function removeprod2() {
+    var combo = document.getElementById("selecttienda");
+    var selected = combo.options[combo.selectedIndex].text;
+    var combo1 = document.getElementById("selectcat");
+    var selected1 = combo1.options[combo1.selectedIndex].text;
+
+    for (var i = 0; i < tiendas.length; i++) {
+        if (tiendas[i].name == selected) {
+            var tienda = tiendas[i].name;
+            for (var j = 0; j < productos.length; j++){
+                if (productos[j].name == selected1) {
+                    var producto=productos[j].name;
+                    almacen.removeProduct(producto,tienda);
+                }
+            }
+        }
+    }
+
+    initPopulate();
+    validado();
+}
+
+
+
+
+
+
+
+
+
+function modifyprod() {
+    var d = document.getElementById("prod");
+    while (d.hasChildNodes()) d.removeChild(d.firstChild);
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Nuevo producto:";
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Seleccionar tienda:";
+    var input = document.createElement("select");
+    input.setAttribute("class", "campos");
+    input.setAttribute("id", "selecttienda");
+    for (var i = 0; i < tiendas.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = tiendas[i].name;
+        input.appendChild(option);
+    }
+    var modif = document.createElement("p");
+    modif.textContent = "Seleccionar producto:";
+    var input5 = document.createElement("select");
+    input5.setAttribute("class", "campos");
+    input5.setAttribute("id", "selectcat");
+    for (var i = 0; i < productos.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = productos[i].name;
+        input5.appendChild(option);
+    }
+    var nuevo2 = document.createElement("p");
+    nuevo2.textContent = "Nuevo nombre:";
+    var input1 = document.createElement("input");
+    input1.setAttribute("type", "text");
+    input1.setAttribute("class", "campos");
+    input1.setAttribute("id", "inputnombre");
+    var nuevo3 = document.createElement("p");
+    nuevo3.textContent = "Nueva imagen:";
+    var input2 = document.createElement("input");
+    input2.setAttribute("type", "text");
+    input2.setAttribute("class", "campos");
+    input2.setAttribute("id", "inputimagen");
+    var nuevo4 = document.createElement("p");
+    nuevo4.textContent = "Nuevo precio:";
+    var input3 = document.createElement("input");
+    input3.setAttribute("type", "text");
+    input3.setAttribute("class", "campos");
+    input3.setAttribute("id", "inputprecio");
+    var nuevo5 = document.createElement("p");
+    nuevo5.textContent = "Nuevo stock:";
+    var input4 = document.createElement("input");
+    input4.setAttribute("type", "text");
+    input4.setAttribute("class", "campos");
+    input4.setAttribute("id", "inputstock");
+
+
+    var boton = document.createElement("button");
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "modifyprod2()");
+
+    d.appendChild(form);
+    form.appendChild(nuevo);
+    form.appendChild(input);
+    form.appendChild(modif);
+    form.appendChild(input5);
+    form.appendChild(nuevo2);
+    form.appendChild(input1);
+    form.appendChild(nuevo3);
+    form.appendChild(input2);
+    form.appendChild(nuevo4);
+    form.appendChild(input3);
+    form.appendChild(nuevo5);
+    form.appendChild(input4);
+    form.appendChild(boton);
+    validado();
+}
+
+function modifyprod2() {
+    var combo = document.getElementById("selectcat");
+    var selected = combo.options[combo.selectedIndex].text;
+    var combo1 = document.getElementById("selecttienda");
+    var selected1 = combo1.options[combo1.selectedIndex].text;
+
+    
+    for (var i = 0; i < tiendas.length; i++) {
+        if (tiendas[i].name == selected1) {
+            var tienda = tiendas[i];
+            for (var j = 0; j < tienda.products.length; j++){
+                if (tienda.products[j].name == selected) {
+                    tienda.products[j].name=document.getElementById("inputnombre").value;
+                    tienda.products[j].images[0]=document.getElementById("inputimagen").value;
+                    tienda.products[j].price=document.getElementById("inputprecio").value;
+                    tienda.products[j].stock=document.getElementById("inputstock").value;
+                }
+            }
+        }
+    }
+
+    
+    initPopulate();
+    validado();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function modifystock() {
+    var d = document.getElementById("prod");
+    while (d.hasChildNodes()) d.removeChild(d.firstChild);
+    var form = document.createElement("form");
+    form.setAttribute("class", "formprod");
+    var modif = document.createElement("p");
+    modif.textContent = "Seleccionar producto:";
+    var input1 = document.createElement("select");
+    input1.setAttribute("class", "campos");
+    input1.setAttribute("id", "selectcat");
+    for (var i = 0; i < productos.length; i++) {
+        var option = document.createElement("option");
+        option.textContent = productos[i].name;
+        input1.appendChild(option);
+    }
+    var nuevo = document.createElement("p");
+    nuevo.textContent = "Nuevo stock global:";
+    var input2 = document.createElement("input");
+    input2.setAttribute("type", "text");
+    input2.setAttribute("class", "campos");
+    input2.setAttribute("id", "inputstock");
+    var boton = document.createElement("button");
+    boton.textContent = "Aceptar";
+    boton.setAttribute("onclick", "modifystock2()");
+
+    d.appendChild(form);
+    form.appendChild(modif);
+    form.appendChild(input1);
+    form.appendChild(nuevo);
+    form.appendChild(input2);
+    form.appendChild(boton);
+    validado();
+}
+
+function modifystock2() {
+    var combo = document.getElementById("selectcat");
+    var selected = combo.options[combo.selectedIndex].text;
+    for (var i = 0; i < productos.length; i++) {
+        if (productos[i].name == selected) {
+            productos[i].stockglobal = document.getElementById("inputstock").value;
+        }
+    }
+    initPopulate();
+    validado();
+}
 
 
 

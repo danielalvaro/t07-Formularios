@@ -88,8 +88,8 @@ var ventana;
             p12.description="Producto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, felis vel elementum ultrices, elit arcu pellentesque lorem, nec vulputate nibh tellus sed nisl.";
             almacen.addProduct(p12, c1);
 
-            p1.stock=20;
-            p2.stock=20;
+            p1.stock=4;
+            p2.stock=4;
             p3.stock=4;
             p4.stock=2;
             p5.stock=3;
@@ -100,7 +100,12 @@ var ventana;
             p10.stock=1;
             p11.stock=4;
             p12.stock=8;
+        
             stock=20;
+            
+            for(var z=0;z<productos.length;z++){
+                productos[z].stockglobal=22;
+            }
 
             
             
@@ -206,7 +211,7 @@ var ventana;
             do {
                 document.getElementById("prod").innerHTML+="<div><a href='#' onmouseover='productShopPopulate("+i+")' onmouseout='productShopPopulate2("+i+")' onclick='globalProductPopulate(glob,"+i+")' id='div"+i+"'><h3>"+tienda.products[i].name+"</h3><img src='"+tienda.products[i].images[0]+"'><span id='span"+i+"'>"+tienda.products[i].description+"</span><h4>"+tienda.products[i].price+" €</h4></a><button onclick='abrirVentana(glob,"+i+")'><span>></span></button></div>";
                 i++;
-            } while (i < productos.length);
+            } while (i < productos.length-1);
         }
 
 
@@ -278,8 +283,12 @@ var ventana;
 
 
         function globalProductPopulate(tienda,i) {
-            document.getElementById("prod").innerHTML="";
-            document.getElementById("prod").innerHTML+="<div id='div"+i+"'><a><h3>"+tienda.products[i].name+"</h3><img src='"+tienda.products[i].images[0]+"'><span id='span"+i+"'>"+tienda.products[i].description+"</span><h4>"+tienda.products[i].price+" €</h4><h3 id='stock"+i+"'>(Stock: "+tienda.products[i].stock+")</h3></a></div><div id='desc'><h2>Descripción del producto: </h2><p>"+tienda.products[i].description+"</p><h3 id='stock"+i+"'>(Stock global: "+stock+")</h3></div>";
+            for(var j=0;j<productos.length;j++){
+                if(productos[j].name==tienda.products[i].name){
+                    document.getElementById("prod").innerHTML="";
+            document.getElementById("prod").innerHTML+="<div id='div"+i+"'><a><h3>"+tienda.products[i].name+"</h3><img src='"+tienda.products[i].images[0]+"'><span id='span"+i+"'>"+tienda.products[i].description+"</span><h4>"+tienda.products[i].price+" €</h4><h3 id='stock"+i+"'>(Stock: "+tienda.products[i].stock+")</h3></a></div><div id='desc'><h2>Descripción del producto: </h2><p>"+tienda.products[i].description+"</p><h3 id='stock"+i+"'>(Stock global: "+productos[j].stockglobal+")</h3></div>";
+                }
+            }
         }
 
 

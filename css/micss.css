@@ -183,7 +183,7 @@ header{
     color: #696969;
     text-align: justify;
     font-size: 20px;
-    padding: 40px;
+    padding: 10px;
 }
 
 #prod img{
@@ -509,4 +509,9 @@ button:hover{
 
 .formprod select option{
     color: #575757;
+}
+
+.formprod p{
+    padding: 0px;
+    margin: 0px;
 }

@@ -119,19 +119,26 @@ function StoreHouse(){
         return productos.length;
     }
     
-    this.removeProduct=function(valorProduct){
+    this.removeProduct=function(valorProduct,valorShop){
         var disponible=false;
         var i=0;
-        for(i;i<productos.length;i++){
-            if(valorProduct===productos[i]){
-                disponible=true;
-                productos.splice(i,1);
-             }
+        for(var j=0;j<tiendas.length;j++){
+            if(valorShop==tiendas[j].name){
+                var shopselect=tiendas[j];
+                for(i;i<shopselect.products.length;i++){
+                    if(valorProduct==shopselect.products[i].name){
+                        disponible=true;
+                        shopselect.products.splice(i,1);
+                    }
+                }
+            }
         }
+        
+        
         if(!disponible){
             throw new ProductoNoRegistradoException(valorProduct);
         }
-        
+        /*
         for(var i=0;i<categorias.length;i++){
             for(var j=0;j<categorias[i].products[j];j++){
                 if(valorProduct===categorias[i].products[j]){
@@ -139,7 +146,7 @@ function StoreHouse(){
                 }
             }
         }
-
+        */
         return categorias.length;
     }
     
@@ -370,8 +377,6 @@ function Product(valorSerialNumber,valorName,valorPrice){
     
     if (typeof valorSerialNumber!=="number") throw new InvalidValueException("serialNumber",valorSerialNumber); 
     
-    if (typeof valorPrice!=="number") throw new InvalidValueException("price",valorPrice); 
-    
     var serialNumber=valorSerialNumber;
     var name=valorName;
     var description=null;
@@ -428,7 +433,6 @@ function Product(valorSerialNumber,valorName,valorPrice){
 		},
 		set:function(value){
             if(value===undefined||value==="") throw new EmptyValueException("value");
-            if(typeof value!=="number") throw new InvalidValueException("price",value); 
 			price=value;
 		}		
 	});
@@ -459,7 +463,6 @@ function Product(valorSerialNumber,valorName,valorPrice){
 		},
 		set:function(value){
             if(value===undefined||value==="") throw new EmptyValueException("value");
-            if(typeof value!=="number") throw new InvalidValueException("stock",value); 
 			stock=value;
 		}		
 	});
